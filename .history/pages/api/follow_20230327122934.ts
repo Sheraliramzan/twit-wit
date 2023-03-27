@@ -44,7 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     id: userId,
                   },
                   data: {
-                    hasNotifications: true,
+                    hasNotification: true,
                   }
                 });
               } catch (error) {
