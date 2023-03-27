@@ -1,0 +1,1 @@
+const serverAuth = (req: Request, res: Response, next: NextFunction) => {

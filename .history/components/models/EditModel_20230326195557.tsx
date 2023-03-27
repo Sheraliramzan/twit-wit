@@ -1,0 +1,6 @@
+const EditModel = () =>{
+    return (
+
+    )
+}
+
