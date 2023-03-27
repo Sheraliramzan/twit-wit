@@ -15,15 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             throw new Error('postId is required');
         }
 
-        const comment = await prisma.comment.create({
-            data: {
-                body,
-                userId: currentUser.id,
-                postId
-            }
-        });
-
-        res.status(200).json(comment);
+        const comment = await prisma.comment.
     }catch(error){
         console.error(error);
         res.status(400).end();

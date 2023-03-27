@@ -21,9 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 userId: currentUser.id,
                 postId
             }
-        });
-
-        res.status(200).json(comment);
+        })
     }catch(error){
         console.error(error);
         res.status(400).end();

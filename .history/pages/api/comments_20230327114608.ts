@@ -18,12 +18,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const comment = await prisma.comment.create({
             data: {
                 body,
-                userId: currentUser.id,
-                postId
+                uder
             }
-        });
-
-        res.status(200).json(comment);
+        })
     }catch(error){
         console.error(error);
         res.status(400).end();
