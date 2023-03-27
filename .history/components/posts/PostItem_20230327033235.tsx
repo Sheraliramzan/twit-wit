@@ -7,7 +7,7 @@ import Avatar from '../Avatar';
 import { AiOutlineHeart, AiOutlineMessage } from 'react-icons/ai';
 
 interface PostItemProps {
-    userId?: string;
+    userId: string;
     data: Record<string, any>;
 }
 const PostItem:React.FC<PostItemProps> = ({
@@ -42,7 +42,7 @@ const PostItem:React.FC<PostItemProps> = ({
         };
 
         return formatDistanceToNowStrict(new Date(data.createdAt));
-    },[data.createdAt]);
+    },[data?.createdAt]);
   return (
     <div
     onClick={goToPost}

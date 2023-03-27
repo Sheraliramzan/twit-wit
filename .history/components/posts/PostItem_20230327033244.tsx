@@ -42,7 +42,7 @@ const PostItem:React.FC<PostItemProps> = ({
         };
 
         return formatDistanceToNowStrict(new Date(data.createdAt));
-    },[data.createdAt]);
+    },[data?.createdAt]);
   return (
     <div
     onClick={goToPost}

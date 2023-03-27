@@ -23,7 +23,7 @@ const PostItem:React.FC<PostItemProps> = ({
     const goToUser = useCallback((event: any)=>{
         event.stopPropagation();
 
-        router.push(`/users/${data.user?.id}`);
+        router.push(`/users/${data.user.id}`);
     },[router, data.user?.id]);
 
     const goToPost = useCallback(()=>{
@@ -42,7 +42,7 @@ const PostItem:React.FC<PostItemProps> = ({
         };
 
         return formatDistanceToNowStrict(new Date(data.createdAt));
-    },[data.createdAt]);
+    },[data?.createdAt]);
   return (
     <div
     onClick={goToPost}
@@ -56,7 +56,7 @@ const PostItem:React.FC<PostItemProps> = ({
     "
     >
         <div className='flex flex-row items-start gap-3'>
-            <Avatar userId = {data.user?.id}/>
+            <Avatar userId={data.user?.id}/>
             <div>
                 <div className='flex flex-row items-center gap-2'>
                     <p onClick={goToUser} className='text-white font-semibold cursor-pointer hover:underline'>{data.user?.name}</p>

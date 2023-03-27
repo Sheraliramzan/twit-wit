@@ -2,6 +2,8 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import usePost  from '../../hooks/usePost'
 import { ClipLoader } from 'react-spinners';
+import { Header } from '../../components/Header';
+import PostItem from '../../components/posts/PostItem';
 
  const PostView = () => {
     const router = useRouter();
@@ -11,12 +13,16 @@ import { ClipLoader } from 'react-spinners';
 
     if (isLoading || !fetchedPost) {
         return <div className='flex justify-center items-center h-full'>
-                <ClipLoader color='blue' size={80}/>
+                <ClipLoader/>
         </div>
     }
   return (
     <>
-    
+        <Header 
+        showBackButton
+        label='Tweet'
+        />
+        <PostItem
     </>
   )
 }

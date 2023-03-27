@@ -23,7 +23,7 @@ const PostItem:React.FC<PostItemProps> = ({
     const goToUser = useCallback((event: any)=>{
         event.stopPropagation();
 
-        router.push(`/users/${data.user?.id}`);
+        router.push(`/users/${data.user.id}`);
     },[router, data.user?.id]);
 
     const goToPost = useCallback(()=>{
@@ -42,7 +42,7 @@ const PostItem:React.FC<PostItemProps> = ({
         };
 
         return formatDistanceToNowStrict(new Date(data.createdAt));
-    },[data.createdAt]);
+    },[data?.createdAt]);
   return (
     <div
     onClick={goToPost}

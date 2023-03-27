@@ -16,7 +16,7 @@ import { ClipLoader } from 'react-spinners';
     }
   return (
     <>
-    
+        <
     </>
   )
 }
