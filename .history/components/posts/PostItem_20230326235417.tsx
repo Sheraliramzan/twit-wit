@@ -1,0 +1,23 @@
+import React from 'react'
+import {useRouter} from 'next/router';
+import { LoginModel } from '../models/LoginModel';
+
+interface PostItemProps {
+    userId?: string;
+    data: Record<string, any>;
+}
+const PostItem:React.FC<PostItemProps> = ({
+    userId,
+    data
+}) => {
+
+    const router = useRouter();
+    const loginModel = LoginModel()
+  return (
+    <div></div>
+  )
+}
+
+export default PostItem
+
+
