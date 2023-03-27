@@ -10,7 +10,7 @@ export const SidebarTweetButton = () => {
 
     const onClick = useCallback(()=>{
       loginModel.onOpen();
-    },[loginModel])
+    },[login])
   return (
     <div onClick={onClick}>
         <div className='
