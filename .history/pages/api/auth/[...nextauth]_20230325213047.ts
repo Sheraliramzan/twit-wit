@@ -13,7 +13,7 @@ export default NextAuth({
                 email: { label: 'Email', type: 'text' },
                 password: { label: 'Password', type: 'password' },
             },
-            asyc authorize(credentials) {
+            async authorize(credentials) {
                 if(!credentials?.email || !credentials?.password) {
                     throw new Error('Please provide a username and password');
                 }

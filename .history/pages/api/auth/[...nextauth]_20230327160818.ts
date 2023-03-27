@@ -3,7 +3,7 @@ import NextAuth from 'next-auth';
 import CredentialsProviders from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import prisma from '../../../libs/prismadb';
-
+import { Provider } from 'next-auth/providers';
 
 export default NextAuth({
     adapter: PrismaAdapter(prisma),
@@ -37,6 +37,7 @@ export default NextAuth({
                 return user;
             }
         }),
+        Providers.G
     ],
     debug: process.env.NODE_ENV === 'development',
 
@@ -44,7 +45,7 @@ export default NextAuth({
         strategy: 'jwt',
     },
     jwt: {
-        secret: process.env.NEXT_AUTH_JWT_SECRET,
+        secret: process.env.NEXTAUTH_JWT_SECRET,
     },
-    secret: process.env.NEXT_AUTH_SECRET,
+    secret: process.env.NEXTAUTH_SECRET,
 });
