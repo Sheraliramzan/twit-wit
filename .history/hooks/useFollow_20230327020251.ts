@@ -1,0 +1,1 @@
+const useFollow = (userId: string) => {};
