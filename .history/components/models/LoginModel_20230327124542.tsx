@@ -69,7 +69,7 @@ export const LoginModel = () => {
         mt-4
         '>
         <p>
-            Don&apos;t Have an Account?
+            Don&apos;Have an Account?
             <span 
             onClick={onToggle}
             className='
