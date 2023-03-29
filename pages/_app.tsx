@@ -1,23 +1,41 @@
-import type { AppProps } from 'next/app';
-import '../styles/globals.css';
-import {Layout} from '../components/layout';
-import { LoginModel } from '../components/models/LoginModel';
-import { RegisterModel } from '../components/models/RegisterModel';
-import { Toaster } from 'react-hot-toast';
-import {SessionProvider} from 'next-auth/react';
-import  EditModel  from '../components/models/EditModel';
-
+import type { AppProps } from "next/app";
+import "../styles/globals.css";
+import { Layout } from "../components/layout";
+import { LoginModel } from "../components/models/LoginModel";
+import { RegisterModel } from "../components/models/RegisterModel";
+import { Toaster } from "react-hot-toast";
+import { SessionProvider } from "next-auth/react";
+import EditModel from "../components/models/EditModel";
+// import Nextauth from "./api/auth/[...nextauth]";
+// import { getServerSession } from "next-auth";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return ( 
+  return (
     <SessionProvider session={pageProps.session}>
-      <Toaster/>
-      <EditModel/>
-      <RegisterModel/>
+      <Toaster />
+      <EditModel />
+      <RegisterModel />
       <LoginModel />
       <Layout>
         <Component {...pageProps} />
       </Layout>
     </SessionProvider>
-  )
+  );
 }
+
+// export async function getServerSideProps(context: any) {
+//   const session = await getServerSession(context.req, context.res, Nextauth);
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
+//   return {
+//     props: {
+//       session,
+//     },
+//   };
+// }

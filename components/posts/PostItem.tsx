@@ -23,7 +23,7 @@ interface PostItemProps {
     const goToUser = useCallback((ev: any) => {
       ev.stopPropagation();
         router.push(`/users/${data.user.id}`)
-    }, [router, data.user.id]);
+    }, [router, data.user?.id]);
   
     const goToPost = useCallback(() => {
       router.push(`/posts/${data.id}`);
@@ -61,7 +61,7 @@ interface PostItemProps {
           transition
         ">
         <div className="flex flex-row items-start gap-3">
-          <Avatar userId={data.user.id} />
+          <Avatar userId={data.user?.id} />
           <div>
             <div className="flex flex-row items-center gap-2">
               <p 
@@ -72,7 +72,7 @@ interface PostItemProps {
                   cursor-pointer 
                   hover:underline
               ">
-                {data.user.name}
+                {data.user?.name}
               </p>
               <span 
                 onClick={goToUser} 
@@ -83,7 +83,7 @@ interface PostItemProps {
                   hidden
                   md:block
               ">
-                @{data.user.username}
+                @{data.user?.username}
               </span>
               <span className="text-neutral-500 text-sm">
                 {createdAt}

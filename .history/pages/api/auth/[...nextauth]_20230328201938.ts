@@ -7,7 +7,6 @@ import GithubProvider from 'next-auth/providers/github';
 
 
 
-
 export default NextAuth({
     adapter: PrismaAdapter(prisma),
     providers: [
