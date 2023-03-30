@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { SessionProvider } from "next-auth/react";
 import EditModel from "../components/models/EditModel";
 import Nextauth from "./api/auth/[...nextauth]";
-import { getServerSession } from "next-auth";
+// import { getServerSession } from "next-auth";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -23,19 +23,19 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 }
 
-export async function getServerSideProps(context: any) {
-  const session = await getServerSession(context.req, context.res, Nextauth);
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-  return {
-    props: {
-      session,
-    },
-  };
-}
+// export async function getServerSideProps(context: any) {
+//   const session = await getServerSession(context.req, context.res, Nextauth);
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
+//   return {
+//     props: {
+//       session,
+//     },
+//   };
+// }
